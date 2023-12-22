@@ -3,6 +3,7 @@ import { nanoid } from 'nanoid';
 import ContactList from './ContactList';
 import filterContacts from './filterContacts';
 import Notiflix from 'notiflix';
+import styles from './ContactForm.module.css';
 
 const contactsReducer = (state, action) => {
   switch (action.type) {
@@ -62,9 +63,9 @@ const ContactForm = () => {
   };
 
   return (
-    <div>
+    <div className={styles.formContainer}>
       <h2>Phonebook</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={styles.form}>
         <h3>Name</h3>
         <input
           type="text"
@@ -82,7 +83,7 @@ const ContactForm = () => {
           pattern="[0-9]{6,}"
           required
         />
-        <button type="submit">Add Contact</button>
+        <button type="submit"  className={`${styles.addContactButton} ${styles.button}`}>Add Contact</button>
       </form>
       <div>
         <h2>Contacts</h2>
@@ -93,6 +94,7 @@ const ContactForm = () => {
           onChange={handleSearch}
           value={filter}
           placeholder="Search contacts"
+          className={styles.input}
         />
         <ContactList contacts={filteredContacts} deleteContact={deleteContact} />
       </div>

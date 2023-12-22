@@ -1,0 +1,41 @@
+body {
+    background-color: #DADCCD; 
+  }
+
+.formContainer {
+    margin: 20px;
+  }
+  
+  form {
+    /* display: flex; */
+    flex-direction: column;
+    
+  }
+  
+  input {
+    margin-bottom: 10px;
+    padding: 8px;
+    border-radius: 20px;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 8px;
+  }
+  button {
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50px;
+    margin-left: 10px; 
+  }
+  .addContactButton {
+    background-color:#0D651F;
+    color: #fff; 
+    border: none;
+  }
+  
+  
