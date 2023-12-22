@@ -1,16 +1,18 @@
+import React, { useState } from 'react';
+import ContactForm from './ContactForm';
+import ContactList from './ContactList';
+
 export const App = () => {
+  const [contacts, setContacts] = useState([]);
+
+  const addContact = (newContact) => {
+    setContacts((prevContacts) => [...prevContacts, newContact]);
+  };
+
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React homework template
+    <div>
+      <ContactForm addContact={addContact} />
+      <ContactList contacts={contacts} />
     </div>
   );
 };
